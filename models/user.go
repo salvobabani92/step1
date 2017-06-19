@@ -3,7 +3,7 @@ package models
 import (
 	"github.com/salvobabani92/step1/config"
 	"time"
-	"fmt"
+
 )
 
 // kullanıcı tablosudur
@@ -51,6 +51,5 @@ func (this *User) Delete() {
 	config.DB.Delete(&this)
 }
 
-config.DB.Model(&User{}).AddIndex("idx_FirstName", "name")
-config.DB.Model(&User{}).AddUniqueIndex("idx_LastName", "surname")
+
 
