@@ -3,11 +3,11 @@ package models
 import (
 	"github.com/salvobabani92/step1/config"
 	"time"
+	"fmt"
 )
 
 // kullanıcı tablosudur
 type User struct {
-
 	ID         uint `json:"id"`
 	// olusturma tarihi
 	CreatedAt  time.Time `json:"-"`
@@ -18,9 +18,9 @@ type User struct {
 	// şifre
 	Password   string `json:"password"`
 	// isim
-	FirstName       string `json:"first_name"`
+	FirstName  string `json:"first_name"`
 	// soyadı
-	LastName    string `json:"last_name"`
+	LastName   string `json:"last_name"`
 	// lokasyonla birebir ilişkilendirme
 	Location   Location `json:"location"`
 	//lokasyon kimliği
@@ -30,9 +30,27 @@ type User struct {
 func (this User) CreateTable() {
 	config.DB.DropTable(this)
 	config.DB.CreateTable(this)
-
-	config.DB.Model(&User{}).AddIndex("idx_FirstName", "name")
-	config.DB.Model(&User{}).AddUniqueIndex("idx_LastName", "surname")
-
 }
+func (this *User) Modify() {
+	// Modify Fonksiyonu burada olacak.
+	config.DB.Save(&this)
+}
+
+func (this User) Insert() {
+	if config.DB.NewRecord(&this) {
+		config.DB.Create(&this)
+	}
+	config.DB.NewRecord(&this)
+}
+
+func (this User) Get() {
+	config.DB.First(&this, this.ID)
+}
+
+func (this *User) Delete() {
+	config.DB.Delete(&this)
+}
+
+config.DB.Model(&User{}).AddIndex("idx_FirstName", "name")
+config.DB.Model(&User{}).AddUniqueIndex("idx_LastName", "surname")
 

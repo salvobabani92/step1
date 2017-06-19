@@ -32,15 +32,14 @@ type Location struct {
  */
 
 
-
 // Database üzerinde tablo yeniden oluşturulur.
 func (this Location)CreateTable() {
 	config.DB.DropTable(this)
 	config.DB.CreateTable(this)
 }
 
-func (this *Location) Modify()  {
-	// Modify Fonksiyonu buraa olacak.
+func (this *Location) Modify() {
+	// Modify Fonksiyonu burada olacak.
 	config.DB.Save(&this)
 }
 

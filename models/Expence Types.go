@@ -22,6 +22,11 @@ func (this ExpenceTypes) CreateTable() {
 	config.DB.DropTable(this)
 	config.DB.CreateTable(this)
 }
+
+func (this *ExpenceTypes) Modify() {
+	// Modify Fonksiyonu burada olacak.
+	config.DB.Save(&this)
+}
 func (this ExpenceTypes) Insert() {
 	if config.DB.NewRecord(&this) {
 		config.DB.Create(&this)
@@ -32,4 +37,8 @@ func (this ExpenceTypes) Insert() {
 func (this ExpenceTypes) Get() {
 	config.DB.First(&this, this.ID)
 	fmt.Println(this.Description)
+}
+
+func (this *ExpenceTypes) Delete() {
+	config.DB.Delete(&this)
 }
