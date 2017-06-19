@@ -1,3 +1,2 @@
 # step1
-deneme 
-pppppp
+Bu bir deneme projesidir.

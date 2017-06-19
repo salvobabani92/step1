@@ -7,25 +7,32 @@ import (
 
 // kullanıcı tablosudur
 type User struct {
-	// kullanıcı numarası
-	ID uint `gorm:"primary_key" json:"ıd"`
+
+	ID         uint `json:"id"`
 	// olusturma tarihi
-	CreatedAt time.Time `json:"-"`
+	CreatedAt  time.Time `json:"-"`
 	//değiştirme tarihi
-	UpdateAt time.Time `json:"-"`
+	UpdateAt   time.Time `json:"-"`
 	// kullanıcı adı
-	Username string `json:"username"`
+	Username   string `json:"username"`
 	// şifre
-	Password string `json:"password"`
+	Password   string `json:"password"`
 	// isim
-	Name     string `json:"name"`
+	FirstName       string `json:"first_name"`
 	// soyadı
-	Surname  string `json:"surname"`
+	LastName    string `json:"last_name"`
+	// lokasyonla birebir ilişkilendirme
+	Location   Location `json:"location"`
+	//lokasyon kimliği
+	LocationID uint `json:"location_ıd"`
 }
 // tablo olusturma
 func (this User) CreateTable() {
-config.DB.DropTable(this)
-config.DB.CreateTable(this)
-}
+	config.DB.DropTable(this)
+	config.DB.CreateTable(this)
 
+	config.DB.Model(&User{}).AddIndex("idx_FirstName", "name")
+	config.DB.Model(&User{}).AddUniqueIndex("idx_LastName", "surname")
+
+}
 
