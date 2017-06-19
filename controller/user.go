@@ -21,7 +21,6 @@ func Get_UserBYID() {
 
 }
 
-
 func Put_User() {
 	//TODO:Kaydı Güncelle
 }
@@ -43,33 +42,28 @@ func Add_Default_Records_User() {
 
 	var user = models.User{}
 	user.FirstName = "ibrahim"
-	user.LastName= "cobani"
+	user.LastName = "cobani"
 	user.LocationID = 1
 	user.Username = "icobani"
 	user.Password = "12345"
-
-	fmt.Print(user)
-
-	if config.DB.NewRecord(&user) {
-		config.DB.Create(&user)
-	}
-	fmt.Println(user)
-	config.DB.NewRecord(&user)
-	fmt.Println(user)
-
+	user.Insert()
 
 	user = models.User{}
-	user.FirstName= "salvator"
+	user.FirstName = "salvator"
 	user.LastName = "babani"
 	user.LocationID = 1
 	user.Username = "sbabani"
 	user.Password = "123453"
+	user.Insert()
 
-	if config.DB.NewRecord(&user) {
-		config.DB.Create(&user)
-	}
-	config.DB.NewRecord(&user)
+	user.ID = 3
+	user.Get()
 
+	user.LastName = "Çalhan"
+	user.Modify()
 
-	fmt.Println("Users added")
+	user.ID
+	user.Delete()
+
+	fmt.Println(user)
 }

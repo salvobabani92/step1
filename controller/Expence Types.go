@@ -4,6 +4,7 @@ import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
 	"github.com/salvobabani92/step1/config"
+	"os/user"
 )
 
 func Post_ExpenceTypes() {
@@ -54,9 +55,11 @@ func Add_Default_Records_ExpenceTypes() {
 	ExpenceTypes.ID = 3
 	ExpenceTypes.Get()
 
-	config.DB.Model(&ExpenceTypes).Delete("Code", "cd")
-	config.DB.Model(&ExpenceTypes).Update("Code", "alş")
-	config.DB.Model(&ExpenceTypes).Find(&ExpenceTypes)
+	ExpenceTypes.Code = "Çalhan"
+	ExpenceTypes.Modify()
+
+	ExpenceTypes.Description
+	ExpenceTypes.Delete()
 
 	fmt.Println(ExpenceTypes)
 }

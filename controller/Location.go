@@ -49,7 +49,6 @@ func Add_Default_Records_Locations() {
 	Location.Description = "İzmir"
 	Location.Insert()
 
-
 	Location.Code = "İst"
 	Location.Description = "İstanbul"
 	Location.Insert()
@@ -68,10 +67,9 @@ func Add_Default_Records_Locations() {
 	Location.Description = "Bizim Ankara"
 	Location.Modify()
 
+	Location.Description
+	Location.Delete()
 
-	//config.DB.Model(&Location).Delete("Code", "Ank")
-	config.DB.Model(&Location).Update("Code", "İsm")
-	config.DB.Model(&Location).Find(&Location)
 	fmt.Println(Location)
 
 }

@@ -4,6 +4,7 @@ import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
 	"github.com/salvobabani92/step1/config"
+	"os/user"
 )
 
 func Post_Expences() {
@@ -42,13 +43,13 @@ func Add_Default_Records_Expences() {
 	Expences.Amount = "%18"
 	Expences.Description = "Clothes"
 	Expences.VAT = "20"
-	Expences.Expencetype= "Visa"
+	Expences.Expencetype = "Visa"
 	Expences.Insert()
 
 	Expences.Amount = "%18"
 	Expences.Description = "Tecnology"
 	Expences.VAT = "15"
-	Expences.Expencetype ="Master Card"
+	Expences.Expencetype = "Master Card"
 	Expences.Insert()
 
 	Expences.Amount = "%8"
@@ -60,8 +61,11 @@ func Add_Default_Records_Expences() {
 	Expences.ID = 3
 	Expences.Get()
 
-	//config.DB.Model(&Expences).Delete("Amount", "%18")
-	config.DB.Model(&Expences).Update("VAT", "2")
-	//config.DB.Model(&Expences).Find(&Expences)
+	Expences.VAT = "%20"
+	Expences.Modify()
+
+	Expences.Description
+	Expences.Delete()
+
 	fmt.Println(Expences)
 }
