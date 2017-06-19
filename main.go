@@ -23,6 +23,11 @@ func main() {
 	models.ExpenceTypes{}.CreateTable()
 	// Add Default ExpenceTypes
 	controller.Add_Default_Records_ExpenceTypes()
+
+	models.Branches{}.CreateTable()
+	// Add Default Branches
+	controller.Add_Default_Records_Branches()
+
 }
 
 
