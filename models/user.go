@@ -25,15 +25,12 @@ type User struct {
 	Location   Location `json:"location"`
 	//lokasyon kimliği
 	LocationID uint `json:"location_ıd"`
+	
 }
 // tablo olusturma
 func (this User) CreateTable() {
 	config.DB.DropTable(this)
 	config.DB.CreateTable(this)
-}
-func (this *User) Modify() {
-	// Modify Fonksiyonu burada olacak.
-	config.DB.Save(&this)
 }
 
 func (this User) Insert() {
@@ -45,6 +42,11 @@ func (this User) Insert() {
 
 func (this User) Get() {
 	config.DB.First(&this, this.ID)
+}
+
+func (this *User) Modify() {
+	// Modify Fonksiyonu burada olacak.
+	config.DB.Save(&this)
 }
 
 func (this *User) Delete() {

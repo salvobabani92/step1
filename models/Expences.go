@@ -35,10 +35,6 @@ func (this Expences) CreateTable() {
 	config.DB.CreateTable(this)
 }
 
-func (this *Expences) Modify() {
-	// Modify Fonksiyonu burada olacak.
-	config.DB.Save(&this)
-}
 func (this Expences) Insert() {
 	if config.DB.NewRecord(&this) {
 		config.DB.Create(&this)
@@ -50,6 +46,12 @@ func (this Expences) Get() {
 	config.DB.First(&this, this.ID)
 	fmt.Println(this.Description)
 }
+
+func (this *Expences) Modify() {
+	// Modify Fonksiyonu burada olacak.
+	config.DB.Save(&this)
+}
+
 func (this *Expences) Delete() {
 	config.DB.Delete(&this)
 }

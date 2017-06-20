@@ -4,7 +4,7 @@ import (
 	"time"
 	"github.com/salvobabani92/step1/config"
 
-	"fmt"
+
 )
 
 // Şubeler
@@ -38,10 +38,6 @@ func (this Location)CreateTable() {
 	config.DB.CreateTable(this)
 }
 
-func (this *Location) Modify() {
-	// Modify Fonksiyonu burada olacak.
-	config.DB.Save(&this)
-}
 
 func (this Location) Insert() {
 	if config.DB.NewRecord(&this) {
@@ -54,6 +50,12 @@ func (this *Location) Get() {
 	config.DB.First(&this, this.ID)
 }
 
+func (this *Location) Modify() {
+	// Modify Fonksiyonu burada olacak.
+	config.DB.Save(&this)
+}
+
 func (this *Location) Delete() {
 	config.DB.Delete(&this)
 }
+
