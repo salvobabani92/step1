@@ -40,28 +40,28 @@ func Add_Default_Records_Branches() {
 	var Branches = models.Branches{}
 	Branches.Name = "Beyoğlu"
 	Branches.Description = "Merkez Bankası"
-	Branches.Code = "MrkzBnk"
+	Branches.Code = "1101"
 	Branches.Insert()
 
 	Branches.Name = "Levent"
 	Branches.Description = "Yapı ve Kredi"
-	Branches.Code = "YKB"
+	Branches.Code = "1102"
 	Branches.Insert()
 
 	Branches.Name = "Şişli"
 	Branches.Description = "Akbank"
-	Branches.Code = "Akb"
+	Branches.Code = "1103"
 	Branches.Insert()
 
 	Branches.Name = "Göktürk"
 	Branches.Description = "Denizbank"
-	Branches.Code = "Dnzbnk"
+	Branches.Code = "1104"
 	Branches.Insert()
 
 	Branches.ID = 4
 	Branches.Get()
 
-	Branches.Code = "Dnzbnk"
+	Branches.Code = "1104"
 	Branches.Modify()
 
 	//Branches.Description

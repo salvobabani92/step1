@@ -3,8 +3,8 @@ package controller
 import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
-	"github.com/salvobabani92/step1/config"
-	"os/user"
+
+
 )
 
 func Post_ExpenceTypes() {
@@ -52,14 +52,18 @@ func Add_Default_Records_ExpenceTypes() {
 	ExpenceTypes.Code = "alş"
 	ExpenceTypes.Insert()
 
-	ExpenceTypes.ID = 3
+	ExpenceTypes.Description = "benzin"
+	ExpenceTypes.Code = "bnz"
+
+
+	ExpenceTypes.ID = 4
 	ExpenceTypes.Get()
 
-	ExpenceTypes.Code = "Çalhan"
+	ExpenceTypes.Code= "bnz"
 	ExpenceTypes.Modify()
 
-	ExpenceTypes.Description
-	ExpenceTypes.Delete()
+	//ExpenceTypes.Description
+	//ExpenceTypes.Delete()
 
 	fmt.Println(ExpenceTypes)
 }

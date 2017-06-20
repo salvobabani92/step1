@@ -3,8 +3,8 @@ package controller
 import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
-	"github.com/salvobabani92/step1/config"
-	"os/user"
+
+
 )
 
 func Post_Expences() {
@@ -54,9 +54,14 @@ func Add_Default_Records_Expences() {
 
 	Expences.Amount = "%8"
 	Expences.Description = "Food"
-	Expences.VAT = "%2"
+	Expences.VAT = "2"
 	Expences.Expencetype = "Cash"
 	Expences.Insert()
+
+	Expences.Amount = "%25"
+	Expences.Description = "Personal"
+	Expences.VAT = "10"
+	Expences.Expencetype = "Credit Card"
 
 	Expences.ID = 3
 	Expences.Get()
@@ -64,8 +69,8 @@ func Add_Default_Records_Expences() {
 	Expences.VAT = "%20"
 	Expences.Modify()
 
-	Expences.Description
-	Expences.Delete()
+	//Expences.Description
+	//Expences.Delete()
 
 	fmt.Println(Expences)
 }

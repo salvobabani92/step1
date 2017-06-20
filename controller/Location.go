@@ -4,7 +4,7 @@ import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
 
-	"github.com/salvobabani92/step1/config"
+
 )
 
 func Post_Location() {
@@ -25,12 +25,12 @@ func Get_LocationBYID() {
 
 func Put_Location() {
 	//TODO:Kaydı Güncelle
-	// db.Debug().Model(&Location).Update(“first_name”, “örnek”)
+
 }
 
 func Delete_Location() {
 	//TODO:Kaydı Sil
-	//db.Debug().Delete(&Location)
+
 }
 
 func Upload_Location_From_Excel() {
@@ -61,14 +61,18 @@ func Add_Default_Records_Locations() {
 	Location.Description = "Ankara"
 	Location.Insert()
 
-	Location.ID = 3
+	Location.Code = "Adn"
+	Location.Description = "Adana"
+	Location.Insert()
+
+	Location.ID = 1
 	Location.Get()
 
-	Location.Description = "Bizim Ankara"
+	Location.Code = "İzm"
 	Location.Modify()
 
-	Location.Description
-	Location.Delete()
+	//Location.Description
+	//Location.Delete()
 
 	fmt.Println(Location)
 

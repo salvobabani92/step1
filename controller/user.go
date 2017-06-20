@@ -3,7 +3,7 @@ package controller
 import (
 	"github.com/salvobabani92/step1/models"
 	"fmt"
-	"github.com/salvobabani92/step1/config"
+
 )
 
 func Post_User() {
@@ -56,14 +56,15 @@ func Add_Default_Records_User() {
 	user.Password = "123453"
 	user.Insert()
 
-	user.ID = 3
+
+	user.ID = 2
 	user.Get()
 
-	user.LastName = "Çalhan"
+	user.LastName = "babani"
 	user.Modify()
 
-	user.ID
-	user.Delete()
+	//user.ID
+	//user.Delete()
 
 	fmt.Println(user)
 }
