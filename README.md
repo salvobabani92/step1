@@ -1,2 +1,2 @@
 # step1
-Bu bir deneme projesidir.
+Bu bir test projesidir.
