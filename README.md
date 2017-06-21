@@ -4,7 +4,7 @@
 
 # **<span style="color: black">step1 </span>**
 
-<span style="color: red"> Bu bir test projesidir. Bu projede controllerlar , modeller üzerinde çalışıldı. Models bölümüne bir test kodu oluşturuldu.  </span>
+ **<span style="color: red"> Bu bir test projesidir. Bu projede controllerlar , modeller üzerinde çalışıldı. Models bölümüne bir test kodu oluşturuldu.</span>**
 
 
 
